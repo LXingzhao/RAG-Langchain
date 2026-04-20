@@ -51,8 +51,8 @@
 git clone https://github.com/LXingzhao/RAG-Langchain.git
 cd RAG-Langchain
 
-# 安装项目所有依赖（建议换国内源加速）
-pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+# 安装项目所有依赖
+pip install -r requirements.txt 
 ```
 ### 4. 项目运行
 启动文件上传界面（构建知识库），上传相关文档（PDF/Word/TXT），系统自动解析并入库
