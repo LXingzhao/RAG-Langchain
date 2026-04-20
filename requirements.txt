@@ -1,0 +1,24 @@
+# 基础框架
+streamlit>=1.30.0
+langchain>=0.1.0
+langchain-core>=0.1.0
+langchain-community>=0.1.0
+langchain-chroma>=0.1.0
+
+# 模型/嵌入
+dashscope>=1.14.0  # 通义千问依赖
+aliyun-python-sdk-core>=2.13.36
+
+# 文件解析
+pdfplumber>=0.10.0
+python-docx>=0.8.11
+
+# 向量库
+chromadb>=0.4.24
+
+# 其他
+hashlib
+datetime
+json
+os
+typing
