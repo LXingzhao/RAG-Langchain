@@ -16,9 +16,3 @@ python-docx>=0.8.11
 # 向量库
 chromadb>=0.4.24
 
-# 其他
-hashlib
-datetime
-json
-os
-typing
