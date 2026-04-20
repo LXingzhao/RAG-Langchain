@@ -48,7 +48,7 @@
 ### 3. 安装依赖
 ```bash
 # 克隆仓库
-git clone https://github.com/LXingzhao/RAG-Langchain.git
+git clone https://github.com/你的用户名/RAG-Langchain.git
 cd RAG-Langchain
 
 # 安装项目所有依赖
