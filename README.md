@@ -45,10 +45,16 @@
    ```bash
    export DASHSCOPE_API_KEY=你的阿里云通义千问API密钥
    ```
+4. 保存并退出 vi 编辑器：按 Esc → 输入 :wq → 回车；
+5. 让配置生效：
+   - zsh 用户：source ~/.zshrc
+   - bash 用户：source ~/.bashrc
+6. 验证：终端输入 echo $DASHSCOPE_API_KEY，能看到密钥则配置成功；
+7. 重启 IDE / 终端，即可正常运行项目。
 ### 3. 安装依赖
 ```bash
 # 克隆仓库
-git clone https://github.com/你的用户名/RAG-Langchain.git
+git clone https://github.com/LXingzhao/RAG-Langchain.git
 cd RAG-Langchain
 
 # 安装项目所有依赖
