@@ -14,7 +14,7 @@
 
 ## 📋 功能特性
 - 📄 **多格式文件解析**：支持 PDF、DOCX、TXT 格式文件上传，自动提取文本内容；
-- 🔍 **智能检索增强**：基于 Chroma 向量库检索相关法律文档片段，精准回答问题；
+- 🔍 **智能检索增强**：基于 Chroma 向量库检索相关企业文档片段，精准回答问题；
 - 💬 **多会话管理**：支持新建/删除会话，对话历史本地持久化存储；
 - 🚫 **重复内容过滤**：基于 MD5 校验，避免重复上传相同内容到知识库；
 - 🎨 **友好交互界面**：Streamlit 搭建的可视化界面，操作简单易上手；
@@ -44,7 +44,7 @@
 3. 在文件末尾新增一行（替换为你的密钥）：
    ```bash
    export DASHSCOPE_API_KEY=你的阿里云通义千问API密钥
-
+   ```
 ### 3. 安装依赖
 ```bash
 # 克隆仓库
@@ -55,14 +55,15 @@ cd RAG-Langchain
 pip install -r requirements.txt 
 ```
 ### 4. 项目运行
-启动文件上传界面（构建知识库），上传相关文档（PDF/Word/TXT），系统自动解析并入库
+####启动文件上传界面（构建知识库）
+上传相关文档（PDF/Word/TXT），系统自动解析并入库
 单次只能上传一份文件，若有多份文件需上传，请上传多次。
 ```bash
 streamlit run app_file_uploader.py
 ```
 ![文件上传到数据库](images/上传文件到数据库.jpg)
 
-启动问答界面
+####启动问答界面
 ```bash
 streamlit run app_qa.py
 ```
@@ -70,7 +71,7 @@ streamlit run app_qa.py
 
 ## 📁 项目结构
 ```
-企业智能顾问RAG/
+RAG-Langchain/  # 项目文件夹
 ├── images/                      # 项目截图目录
 │   ├── .gitkeep                 # 空目录占位文件
 │   ├── 上传文件到数据库.jpg      # 文件上传界面截图
@@ -87,3 +88,13 @@ streamlit run app_qa.py
 ├── requirements.txt             # 依赖清单
 └── vector_stores.py             # Chroma向量库封装（检索器）
 ```
+## 🧩 核心流程
+1.文件上传：用户上传企业文档 → app_file_uploader.py 解析文本；
+2.文本处理：文本分片 → MD5 去重 → 调用 knowledge_base.py 向量入库（Chroma）；
+3.问答流程：用户在 app_qa.py 提问 → vector_stores.py 检索相关文档 → rag.py 结合对话历史调用通义千问 → 流式返回结果。
+
+## ⚠️ 注意事项
+1.确保 API 密钥配置后重启终端 / IDE，否则项目无法读取环境变量；
+2.向量库默认存储在本地 chroma_db/ 目录，清空该目录可重置知识库；
+3.单次上传文件建议不超过 100MB，避免解析耗时过长；
+4.md5.text 记录已上传文件的 MD5，删除后重复上传检测失效。
