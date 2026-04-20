@@ -55,7 +55,7 @@ cd RAG-Langchain
 pip install -r requirements.txt 
 ```
 ### 4. 项目运行
-####启动文件上传界面（构建知识库）
+#### 启动文件上传界面（构建知识库）
 上传相关文档（PDF/Word/TXT），系统自动解析并入库
 单次只能上传一份文件，若有多份文件需上传，请上传多次。
 ```bash
@@ -63,7 +63,7 @@ streamlit run app_file_uploader.py
 ```
 ![文件上传到数据库](images/上传文件到数据库.jpg)
 
-####启动问答界面
+#### 启动问答界面
 ```bash
 streamlit run app_qa.py
 ```
