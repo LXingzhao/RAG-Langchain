@@ -26,16 +26,35 @@
 - Python 3.10+
 - 阿里云 DashScope 通义千问 API 密钥（需自行申请：[阿里云百炼](https://dashscope.console.aliyun.com/)）
 
-### 2. 安装依赖
+### 2. API 密钥配置（必做！一次配置，永久生效）
+#### Windows 系统配置步骤
+1. 右键桌面「此电脑」→ 选择「属性」；
+2. 点击左侧「高级系统设置」→ 弹出「系统属性」窗口，切换到「高级」标签；
+3. 点击「环境变量」→ 在「用户变量」区域（仅当前用户生效，推荐）点击「新建」；
+4. 「变量名」输入：`DASHSCOPE_API_KEY`（必须完全一致，大小写敏感）；
+5. 「变量值」输入：你的阿里云通义千问 API 密钥（从阿里云百炼控制台获取）；
+6. 点击「确定」保存所有窗口，**重启你的终端/IDE**（如 PyCharm、VS Code）；
+7. 验证：打开新终端，输入 `echo %DASHSCOPE_API_KEY%`，能看到密钥则配置成功。
+
+#### Mac/Linux 系统配置步骤
+1. 打开终端（Terminal）；
+2. 编辑环境变量配置文件（根据你的 Shell 选择，Mac 新版默认 zsh）：
+   - zsh 用户：`vi ~/.zshrc`
+   - bash 用户：`vi ~/.bashrc`
+3. 在文件末尾新增一行（替换为你的密钥）：
+   ```bash
+   export DASHSCOPE_API_KEY=你的阿里云通义千问API密钥
+
+### 3. 安装依赖
 ```bash
 # 克隆仓库
 git clone https://github.com/LXingzhao/RAG-Langchain.git
 cd RAG-Langchain
 
-# 安装依赖
-pip install -r requirements.txt
+# 安装项目所有依赖（建议换国内源加速）
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
 ```
-### 3. 项目运行
+### 4. 项目运行
 启动文件上传界面（构建知识库），上传相关文档（PDF/Word/TXT），系统自动解析并入库
 单次只能上传一份文件，若有多份文件需上传，请上传多次。
 ```bash
