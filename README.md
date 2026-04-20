@@ -36,28 +36,34 @@ cd 企业法律顾问RAG
 pip install -r requirements.txt
 ```
 ### 3. 项目运行
-启动文件上传界面（构建知识库）
+启动文件上传界面（构建知识库），上传相关文档（PDF/Word/TXT），系统自动解析并入库
 ```bash
 streamlit run app_file_uploader.py
 ```
-上传相关文档（PDF/Word/TXT），系统自动解析并入库
+![文件上传到数据库](images/上传文件到数据库.jpg)
 
 启动问答界面
 ```bash
 streamlit run app_qa.py
 ```
+![智能顾问运行示例](images/智能顾问运行示例.jpg)
 
 ## 📁 项目结构
 ```
 企业智能顾问RAG/
-├── config_data.py          # 全局配置（模型、向量库、分片参数）
-├── knowledge_base.py       # 知识库核心（文本分片、MD5去重、向量入库）
-├── vector_stores.py        # Chroma向量库封装（检索器）
-├── rag.py                  # RAG问答链（提示词、对话历史、模型调用）
-├── file_history_store.py   # 对话历史文件存储
-├── app_file_uploader.py    # Streamlit文件上传界面
-├── app_qa.py               # Streamlit问答界面
-├── requirements.txt        # 依赖清单
-├── .gitignore              # Git忽略规则
-└── README.md               # 项目说明
+├── images/                      # 项目截图目录
+│   ├── .gitkeep                 # 空目录占位文件
+│   ├── 上传文件到数据库.jpg      # 文件上传界面截图
+│   └── 智能顾问运行示例.jpg      # 问答界面截图
+├── .gitignore                   # Git忽略规则
+├── LICENSE                      # 许可证文件
+├── README.md                    # 项目说明
+├── app_file_uploader.py         # Streamlit文件上传界面（核心代码）
+├── app_qa.py                    # Streamlit问答界面
+├── config_data.py               # 全局配置（模型、向量库、分片参数）
+├── file_history_store.py        # 对话历史文件存储
+├── knowledge_base.py            # 知识库核心（文本分片、MD5去重、向量入库）
+├── rag.py                       # RAG问答链（提示词、对话历史、模型调用）
+├── requirements.txt             # 依赖清单
+└── vector_stores.py             # Chroma向量库封装（检索器）
 ```
