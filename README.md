@@ -24,11 +24,10 @@
 
 ### 1. 环境准备
 - Python 3.10+
-- 阿里云 DashScope 通义千问 API 密钥（需自行申请：[阿里云百炼](https://dashscope.console.aliyun.com/)）
-
 - 安装 Tesseract OCR：https://github.com/UB-Mannheim/tesseract/wiki
 - 安装 Poppler：https://github.com/oschwartz10612/poppler-windows
 - 将两个工具的 bin 目录添加到系统环境变量
+- 阿里云 DashScope 通义千问 API 密钥（需自行申请：[阿里云百炼](https://dashscope.console.aliyun.com/)）
 
 ### 2. API 密钥配置（必做！一次配置，永久生效）
 #### Windows 系统配置步骤
